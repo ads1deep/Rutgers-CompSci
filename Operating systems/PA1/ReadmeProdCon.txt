@@ -1,0 +1,7 @@
+First we create 3 Mutexes Mutex=1 ,Prod=1 and Cons=0 , so that we can start with the producer ,ie we should first provide the data in the buffer then we notify the consumer that there is data available in the buffer. and Mutex for protecting the shared variables, we can see that we don't actuly need that mutex because we only have 1producer and 1consumer that execute synchrously.
+
+We created 2 data segment , one called  buffer (size=1024), which serves as a sared memory for both the consumer and the producer. the second memory segment is currentBuffSize which is shared integer variable,it contains the size(number of bytes) of the last  read data(from the jumbled file to the buffer), we need it because we should know how much data we should append to the ouput file, for that the size of the file may not  be proportional to 1024 ,ie at last the size of data may be <1024 and we should only save that data without having the problem of saving unwanted data.
+
+We then create a process using the fork function , the child serves as the producer,and the parent serves as the consumer,
+the producer at first (Prod=1) opens the file placed in argv[1] for reading, and start reading and filling the buffer as soon as the consumer is not using it.
+When consumer's turn comes, it swapes the buffer(every pair of bytes) and saves the data to the new files (in argv[2]).

@@ -1,0 +1,33 @@
+Test 1: Standerd Case 
+typee in : time_span  duration  event_string  (e.g: 1  2  Hello) or negative integer to stop
+
+1 1 how
+1 -> how
+2 1 are
+2 -> are
+3 1 you
+3 -> you
+-1
+duration  should be positive, goodbye
+Exit
+
+
+Test 2: 
+input nehative number
+typee in : time_span  duration  event_string  (e.g: 1  2  Hello) or negative integer to stop
+-1
+Time span should be positive, goodbye
+Exit
+
+Test 3: 
+2 simlar request very fast 
+typee in : time_span  duration  event_string  (e.g: 1  2  Hello) or negative integer to stop
+2 1 hi
+2 1 hi
+2 -> hi
+2 -> hi
+-1
+duration  should be positive, goodbye
+Exit
+
+

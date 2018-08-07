@@ -1,0 +1,5 @@
+Jane Doe manager 100000
+John Brown techsupport 80000
+Kate Smith techsupport 75000
+Bob Zubert secretary 40000
+Anne Graham janitor 35000
